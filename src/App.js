@@ -16,7 +16,7 @@ const App = () => {
         <div style={{ width: '100px' }}></div> {/* Spacer for balance */}
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>
@@ -125,7 +125,7 @@ const Login = () => {
       });
       setMessage('Login successful! Redirecting to home...');
       console.log(response.data); // JWT token
-      setTimeout(() => navigate('/'), 2000); // Redirect to home after 2 seconds
+      setTimeout(() => navigate('/home'), 2000); // Redirect to home after 2 seconds
     } catch (err) {
       setMessage(err.response?.data?.message || 'Login failed');
     }
